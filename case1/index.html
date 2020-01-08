@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.1/axios.js'></script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+const cors = 'https://cors-anywhere.herokuapp.com/'; 
+const url = 'https://data.ntpc.gov.tw/api/v1/rest/datastore/382000000A-000139-001'; 
+
+
+  axios.get(`${cors}${url}`)
+  .then(res => {
+      console.log(res)
+      document.body.innerHTML = JSON.stringify(res)
+  })
+  .catch(err => {
+      console.error(err); 
+  })
+</script>
+</html>
